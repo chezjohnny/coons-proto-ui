@@ -1,0 +1,120 @@
+
+
+[data-theme="coons"] {
+    --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+    --line-height: 1.2;
+    --font-weight: 400;
+    --font-size: 16px;
+    --border-radius: 0.25rem;
+    --border-width: 1px;
+    --outline-width: 3px;
+    --spacing: 1rem;
+    --typography-spacing-vertical: 1.2rem;
+    --block-spacing-vertical: calc(var(--spacing) * 2);
+    --block-spacing-horizontal: var(--spacing);
+    --form-element-spacing-vertical: 0.6rem;
+    --form-element-spacing-horizontal: 0.6rem;
+    --nav-element-spacing-vertical: 0.6rem;
+    --nav-element-spacing-horizontal: 0.3rem;
+    --nav-link-spacing-vertical: 0.3rem;
+    --nav-link-spacing-horizontal: 0.3rem;
+    --form-label-font-weight: var(--font-weight);
+    --transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    [data-theme="coons"] body>main {
+        grid-template-columns: 50px auto;
+    }
+    [data-theme="coons"] main>aside.extra {
+        display: none;
+    }
+}
+
+[data-theme="coons"] body>main {
+    padding: 0;
+}
+
+[data-theme="coons"] body>main {
+    display: grid;
+    grid-template-columns: 50px auto auto;
+}
+
+
+[data-theme="coons"] main>aside.icons {
+    border-right: 1px solid #ccc;
+    /* background-color: #eee; */
+}
+
+[data-theme="coons"] main>aside.icons>nav {
+    position: fixed; 
+    max-height: calc(100vh);
+    overflow-x: hidden;
+    overflow-y: auto;
+    left: 5px;
+    /* font-size: 14px; */
+}
+
+[data-theme="coons"] main>aside.extra {
+    width: 150px;
+    transition: all 250ms ease-in;
+}
+
+[data-theme="coons"] main>aside.extra>nav {
+    position: fixed; 
+    padding: 10px 20px;
+    max-height: calc(100vh);
+    overflow-x: hidden;
+    overflow-y: auto;  
+    /* --transition: visibility 0s, opacity 0.5s linear; */
+}
+[data-theme="coons"] div[role=document] {
+    margin-top: calc(0.5*var(--block-spacing-vertical));
+}
+
+[data-theme="coons"] body>nav {
+    --nav-link-spacing-vertical: 1rem;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: var(--nav-background-color);
+    box-shadow: 0 1px 0 var(--nav-border-color);
+}
+
+/* main>aside.extra li, main>aside summary {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 16px;
+} */
+
+[data-theme="coons"] article {
+    margin: 20px;
+    position: relative;
+    padding: calc(0.3*var(--block-spacing-vertical)) var(--block-spacing-horizontal);
+}
+
+[data-theme="coons"] article i {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+[data-theme="coons"] article strong {
+    margin-left: 1rem;
+}
+[data-theme="coons"] article p {
+    margin-top: calc(0.3*var(--block-spacing-vertical));
+}
+
+#aside:checked~#page #sidebar {
+    width: 0;
+}
+#aside:checked~#page #sidebar>nav {
+    display: none;
+}
