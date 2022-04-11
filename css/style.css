@@ -25,30 +25,25 @@
     --medium-block-spacing-vertical: calc(0.3 * var(--block-spacing-vertical))
 }
 
-/* remove extra top space */
 [data-theme="coons"] body>main {
+    /* remove extra top space */
     padding: 0;
-}
-
-/* main content */
-[data-theme="coons"] body>main {
+    /* main content */
     display: flex;
 }
 
-/* first nav aside bar */
+/* nav aside bar */
 [data-theme="coons"] main>aside.icons {
-    border-right: 1px solid #ccc;
+    /* border-right: 1px solid #ccc; */
     width: 60px;
     height: calc(100vh);
+    flex-grow: 0;     /* do not grow   - initial value: 0 */
+    flex-shrink: 0;   /* do not shrink - initial value: 1 */
+    flex-basis: 60px; /* width/height  - initial value: auto */
 }
 
 [data-theme="coons"] main>aside.icons>nav {
     left:10px;
-}
-
-[data-theme="coons"] main>aside.extra {
-    width: 150px;
-    padding:  var(--medium-block-spacing-vertical) var(--block-spacing-horizontal);
 }
 
 [data-theme="coons"] main nav {
@@ -58,15 +53,28 @@
     overflow-y: auto;  
 }
 
+[data-theme="coons"] nav a[role=button] {
+    display: block;
+    padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+}
+
+/* main content */
 [data-theme="coons"] div[role=document] {
     flex-grow: 1;
     padding:  var(--medium-block-spacing-vertical) var(--block-spacing-horizontal);
 }
 
+
 [data-theme="coons"] article {
-    margin: 20px;
+    /* margin: 20px; */
     position: relative;
     padding: var(--medium-block-spacing-vertical) var(--block-spacing-horizontal);
+}
+
+[data-theme="coons"] li article,
+[data-theme="coons"] article article
+ {
+    margin: 20px;
 }
 
 [data-theme="coons"] div[role=document] ol {
@@ -91,22 +99,36 @@
 [data-theme="coons"] article strong {
     margin-left: 2rem;
 }
+
 [data-theme="coons"] article p {
     margin-top: var(--medium-block-spacing-vertical);
 }
 
-/* hide/show hamburger */
-#aside:checked~#page #sidebar {
-    width: 0;
-}
 
-#aside:checked~#page #sidebar>nav {
-    display: none;
-}
-
-/* hide secondary nav on mobile */
-@media (max-width: 768px) {
-    [data-theme="coons"] main>aside.extra {
-        display: none;
+@media (min-width: 768px) {
+    [data-theme="coons"] article.more {
+        float: right;
+        width: 300px;
     }
+}
+
+@media (max-width: 768px) {
+    [data-theme="coons"] article.more {
+        margin:0;
+    }
+}
+
+[data-theme="coons"] article.sticky {
+    position: fixed;
+    top: 120px;
+    right: 60px;
+    z-index: 1000;
+}
+
+[data-theme="coons"] .files li a {
+    display: inline;
+}
+
+section article:first-child {
+    margin-top:10px;
 }

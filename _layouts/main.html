@@ -1,0 +1,22 @@
+---
+---
+<!doctype html>
+<html data-theme="coons" lang="en">
+<head>
+    <title>Coons UI Demo page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/pico.min.css">
+   <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+    <link href="{{ site.baseurl }}/css/fontawsome-all.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <input type="checkbox" id="aside" hidden />
+        <main  id="page" class="container-fluid">
+            {% include icons.html %}
+            <div role="document">
+                {{ content }}
+            </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+<aside class="icons">
+    <nav>
+        <ul>
+            <li><a href="{{ site.baseurl }}/index" role="button" class="outline"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="{{ site.baseurl }}/edit" role="button" class="outline"><i class="fa-solid fa-plus"></i></a></li>
+            <li><a href="{{ site.baseurl }}/search" role="button" class="outline"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li><a href="{{ site.baseurl }}/bookmarks" role="button" class="outline"><i class="fa-solid fa-bookmark"></i></a></li>
+            {% if page.extra_sidebar%}
+            <li><hr/></li>
+            <li><a href="#" role="button" class="outline"><label for="aside"><i class="fa-solid fa-bars"></i></label></a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</aside>
